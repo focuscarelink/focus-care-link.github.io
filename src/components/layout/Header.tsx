@@ -1,0 +1,127 @@
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Phone, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "Our Services", href: "/services" },
+  { name: "About Us", href: "/about" },
+  { name: "Careers", href: "/careers" },
+  { name: "Quality & Compliance", href: "/compliance" },
+  { name: "Contact", href: "/contact" },
+];
+
+export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  return (
+    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+      {/* Top bar with contact info */}
+      <div className="bg-primary text-primary-foreground">
+        <div className="container flex items-center justify-between py-2 text-sm">
+          <div className="hidden md:flex items-center gap-6">
+            <a href="tel:02074197419" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Phone className="w-4 h-4" />
+              <span>Care Enquiries: 020 7419 7419</span>
+            </a>
+            <a href="tel:02081895984" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Heart className="w-4 h-4" />
+              <span>Work With Us: 020 8189 5984</span>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 mx-auto md:mx-0">
+            <span className="font-medium">CQC Registered Provider</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main navigation */}
+      <nav className="container">
+        <div className="flex items-center justify-between py-4">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
+              <Heart className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <div>
+              <span className="font-display text-xl font-bold text-foreground block leading-tight">
+                Focus Care Link
+              </span>
+              <span className="text-xs text-muted-foreground">Est. 2004</span>
+            </div>
+          </Link>
+
+          {/* Desktop navigation */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={cn(
+                  "px-4 py-2 rounded-lg text-sm font-medium transition-colors focus-accessible",
+                  location.pathname === item.href
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground hover:bg-secondary"
+                )}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:block">
+            <Button asChild className="cta-gradient border-0 text-accent-foreground font-semibold shadow-soft">
+              <Link to="/contact">Request Care Assessment</Link>
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            className="lg:hidden p-2 rounded-lg hover:bg-secondary focus-accessible"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile navigation */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden pb-4 animate-fade-in">
+            <div className="flex flex-col gap-2">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "px-4 py-3 rounded-lg font-medium transition-colors",
+                    location.pathname === item.href
+                      ? "bg-primary text-primary-foreground"
+                      : "text-foreground hover:bg-secondary"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Button asChild className="cta-gradient border-0 text-accent-foreground font-semibold mt-2">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  Request Care Assessment
+                </Link>
+              </Button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+}
