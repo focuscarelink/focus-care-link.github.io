@@ -9,6 +9,7 @@ const complianceLinks = [
   { name: "Statement of Purpose", href: "/compliance#statement-of-purpose" },
   { name: "Complaints Procedure", href: "/compliance#complaints" },
   { name: "Safeguarding Policy", href: "/compliance#safeguarding" },
+  { name: "Legal & Policies", href: "/legal" },
   { name: "Privacy Notice", href: "/privacy" },
 ];
 
@@ -144,6 +145,9 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-background/60">
             <p>© {currentYear} Focus Care Link. All rights reserved.</p>
             <div className="flex items-center gap-6">
+              <Link to="/legal" className="hover:text-background transition-colors font-medium">
+                Legal & Policies
+              </Link>
               <Link to="/privacy" className="hover:text-background transition-colors">
                 Privacy Policy
               </Link>
