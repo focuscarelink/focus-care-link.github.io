@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Heart, Users } from "lucide-react";
 import heroImage from "@/assets/hero-care.jpg";
+import cqcBadge from "@/assets/cqc-good-rating.jpg";
 
 const trustBadges = [
   { icon: Shield, label: "CQC Registered" },
@@ -56,7 +57,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
             <Button asChild size="lg" className="cta-gradient border-0 text-accent-foreground font-semibold text-lg h-14 px-8">
               <Link to="/contact">
-                Request Care Assessment
+                Request A Care Service
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
@@ -78,12 +79,21 @@ export function HeroSection() {
                 Care Enquiries: 020 7419 7419
               </a>
               <a
-                href="tel:02081895984"
+                href="tel:02081895988"
                 className="text-background text-xl font-semibold hover:text-primary-foreground transition-colors"
               >
-                Careers: 020 8189 5984
+                Careers: 0208 189 5988
               </a>
             </div>
+          </div>
+
+          {/* CQC Badge */}
+          <div className="mt-8 animate-fade-up delay-500">
+            <img 
+              src={cqcBadge} 
+              alt="CQC Good Rating" 
+              className="h-24 w-auto rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </div>

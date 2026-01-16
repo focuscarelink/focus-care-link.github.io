@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import focusCareLogo from "@/assets/focus-care-logo.png";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -27,9 +28,9 @@ export function Header() {
               <Phone className="w-4 h-4" />
               <span>Care Enquiries: 020 7419 7419</span>
             </a>
-            <a href="tel:02081895984" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="tel:02081895988" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Heart className="w-4 h-4" />
-              <span>Work With Us: 020 8189 5984</span>
+              <span>Work With Us: 0208 189 5988</span>
             </a>
           </div>
           <div className="flex items-center gap-2 mx-auto md:mx-0">
@@ -43,15 +44,11 @@ export function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-              <Heart className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <div>
-              <span className="font-display text-xl font-bold text-foreground block leading-tight">
-                Focus Care Link
-              </span>
-              <span className="text-xs text-muted-foreground">Est. 2004</span>
-            </div>
+            <img 
+              src={focusCareLogo} 
+              alt="Focus Care Link - Passion for Care" 
+              className="h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop navigation */}
@@ -75,7 +72,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button asChild className="cta-gradient border-0 text-accent-foreground font-semibold shadow-soft">
-              <Link to="/contact">Request Care Assessment</Link>
+              <Link to="/contact">Request A Care Service</Link>
             </Button>
           </div>
 
@@ -115,7 +112,7 @@ export function Header() {
               ))}
               <Button asChild className="cta-gradient border-0 text-accent-foreground font-semibold mt-2">
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Request Care Assessment
+                  Request A Care Service
                 </Link>
               </Button>
             </div>

@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import { 
   Heart, 
   Users, 
-  Award, 
   Leaf, 
   Globe,
-  Clock,
   ArrowRight,
   Quote
 } from "lucide-react";
+import hcaLogo from "@/assets/hca-logo.png";
+import isoLogo from "@/assets/iso-9001-badge.jpg";
+import diversityBadge from "@/assets/diversity-badge.jpg";
 
 const values = [
   {
@@ -94,6 +95,14 @@ const About = () => {
             <h2 className="font-display text-display-md text-foreground mb-6">
               What We Stand For
             </h2>
+            {/* Diversity badge */}
+            <div className="flex justify-center mb-8">
+              <img 
+                src={diversityBadge} 
+                alt="Diverse, Inclusive, Together" 
+                className="w-40 h-auto"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -135,6 +144,13 @@ const About = () => {
                 sector. We are members of the Home Care Association and adhere to the 
                 General Social Care Council's Code of Conduct.
               </p>
+              
+              {/* Accreditation logos */}
+              <div className="flex items-center gap-6 mb-8">
+                <img src={hcaLogo} alt="Homecare Association Member" className="h-20 w-auto" />
+                <img src={isoLogo} alt="ISO 9001 Quality Management Certified" className="h-20 w-auto" />
+              </div>
+
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="font-display text-4xl font-bold text-primary mb-2">20+</div>

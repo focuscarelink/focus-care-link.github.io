@@ -12,6 +12,7 @@ import {
   Briefcase,
   Star
 } from "lucide-react";
+import diversityBadge from "@/assets/diversity-badge.jpg";
 
 const benefits = [
   {
@@ -54,7 +55,7 @@ const vacancies = [
   },
   {
     title: "Support Worker",
-    location: "Waltham Forest & Tower Hamlets",
+    location: "Barking & Dagenham, Haringey, Hackney",
     type: "Full-time / Part-time",
     description: "Provide specialist support for individuals with learning disabilities and mental health needs.",
   },
@@ -148,6 +149,12 @@ const Careers = () => {
                 in care is valuable, what matters most is your character and values. 
                 We provide comprehensive training for the right candidates.
               </p>
+              {/* Diversity badge */}
+              <img 
+                src={diversityBadge} 
+                alt="Diverse, Inclusive, Together - We welcome people of all backgrounds" 
+                className="w-48 h-auto"
+              />
             </div>
 
             <div className="bg-card rounded-2xl p-8 shadow-soft">
@@ -234,8 +241,8 @@ const Careers = () => {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-accent-foreground/30 text-accent-foreground hover:bg-accent-foreground/10 font-semibold">
-              <a href="tel:02081895984">
-                Call Recruitment: 020 8189 5984
+              <a href="tel:02081895988">
+                Call Recruitment: 0208 189 5988
               </a>
             </Button>
           </div>
