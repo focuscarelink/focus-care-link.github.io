@@ -18,19 +18,19 @@ import {
 const locations = [
   {
     name: "Camden (Head Office)",
-    address: "Kentish Town, London NW5",
+    address: "Kentish Town, London NW5 2AB",
     phone: "020 7419 7419",
-    email: "camden@focuscarelink.co.uk",
+    email: "admin@focuscarelink.co.uk",
     hours: "Monday - Friday: 9am - 5pm",
     description: "Our main office serving Camden, Islington, and surrounding North London boroughs.",
   },
   {
-    name: "Waltham Forest",
-    address: "Leyton, London E10",
-    phone: "020 8189 5984",
-    email: "walthamforest@focuscarelink.co.uk",
+    name: "East London Branch",
+    address: "Leyton, London E10 7JQ",
+    phone: "0208 189 5988",
+    email: "office@focuscarelink.co.uk",
     hours: "Monday - Friday: 9am - 5pm",
-    description: "Serving Waltham Forest, Tower Hamlets, and East London communities.",
+    description: "We mainly provide care for Barking and Dagenham, Haringey, and Hackney. We can also provide care in Waltham Forest, Tower Hamlets and surrounding areas of East London.",
   },
 ];
 

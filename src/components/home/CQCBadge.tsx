@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import { ExternalLink, FileText, Shield, AlertCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ExternalLink, FileText, Shield } from "lucide-react";
+import cqcBadge from "@/assets/cqc-good-rating.jpg";
+import hcaLogo from "@/assets/hca-logo.png";
+import isoLogo from "@/assets/iso-9001-badge.jpg";
 
 export function CQCBadge() {
   return (
@@ -10,15 +12,17 @@ export function CQCBadge() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Left: CQC Info */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-primary-foreground" />
-                </div>
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src={cqcBadge} 
+                  alt="CQC Good Rating" 
+                  className="h-24 w-auto rounded-lg"
+                />
                 <div>
                   <h3 className="font-display text-xl font-semibold text-foreground">
                     Care Quality Commission
                   </h3>
-                  <p className="text-sm text-muted-foreground">Registered Provider</p>
+                  <p className="text-sm text-muted-foreground">Registered Provider - Good Rating</p>
                 </div>
               </div>
 
@@ -27,6 +31,12 @@ export function CQCBadge() {
                 England's independent regulator of health and social care services. 
                 Our commitment to quality and continuous improvement guides everything we do.
               </p>
+
+              {/* Accreditation logos */}
+              <div className="flex items-center gap-4 mb-6">
+                <img src={hcaLogo} alt="Homecare Association Member" className="h-16 w-auto" />
+                <img src={isoLogo} alt="ISO 9001 Quality Management" className="h-16 w-auto" />
+              </div>
 
               <div className="flex flex-wrap gap-3">
                 <a

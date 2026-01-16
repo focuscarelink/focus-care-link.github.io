@@ -6,18 +6,18 @@ const locations = [
   {
     name: "Camden (Head Office)",
     area: "Kentish Town",
-    postcode: "NW5",
+    postcode: "NW5 2AB",
     phone: "020 7419 7419",
     hours: "Mon-Fri: 9am-5pm",
     description: "Our main office serving Camden, Islington, and surrounding North London boroughs.",
   },
   {
-    name: "Waltham Forest",
+    name: "East London Branch",
     area: "Leyton",
-    postcode: "E10",
-    phone: "020 8189 5984",
+    postcode: "E10 7JQ",
+    phone: "0208 189 5988",
     hours: "Mon-Fri: 9am-5pm",
-    description: "Serving Waltham Forest, Tower Hamlets, and East London communities.",
+    description: "We mainly provide care for Barking and Dagenham, Haringey, and Hackney. We can also provide care in Waltham Forest, Tower Hamlets and surrounding areas of East London.",
   },
 ];
 

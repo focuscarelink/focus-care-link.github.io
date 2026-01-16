@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { Heart, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import focusCareLogo from "@/assets/focus-care-logo.png";
+import hcaLogo from "@/assets/hca-logo.png";
+import isoLogo from "@/assets/iso-9001-badge.jpg";
 
 const complianceLinks = [
   { name: "CQC Registration", href: "/compliance" },
@@ -20,13 +23,13 @@ const serviceLinks = [
 const locations = [
   {
     name: "Camden (Head Office)",
-    address: "Kentish Town, London NW5",
+    address: "Kentish Town, London NW5 2AB",
     phone: "020 7419 7419",
   },
   {
-    name: "Waltham Forest",
-    address: "Leyton, London E10",
-    phone: "020 8189 5984",
+    name: "East London Branch",
+    address: "Leyton, London E10 7JQ",
+    phone: "0208 189 5988",
   },
 ];
 
@@ -41,24 +44,32 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-                <Heart className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="font-display text-xl font-bold">Focus Care Link</span>
+              <img 
+                src={focusCareLogo} 
+                alt="Focus Care Link" 
+                className="h-16 w-auto bg-white rounded-lg p-2"
+              />
             </Link>
             <p className="text-background/70 mb-6 text-body-lg leading-relaxed">
               Providing compassionate domiciliary care across London since 2004. 
               Guided by Ubuntu — "I am because we are."
             </p>
-            <a
-              href="https://www.cqc.org.uk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-background/10 rounded-lg hover:bg-background/20 transition-colors"
-            >
-              <span className="font-semibold">CQC Registered</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <div className="flex items-center gap-4 mb-4">
+              <a
+                href="https://www.cqc.org.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-background/10 rounded-lg hover:bg-background/20 transition-colors"
+              >
+                <span className="font-semibold">CQC Registered</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+            {/* Accreditation logos */}
+            <div className="flex items-center gap-3 mt-4">
+              <img src={hcaLogo} alt="Homecare Association Member" className="h-12 w-auto bg-white rounded p-1" />
+              <img src={isoLogo} alt="ISO 9001 Certified" className="h-12 w-auto rounded" />
+            </div>
           </div>
 
           {/* Services column */}

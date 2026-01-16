@@ -35,7 +35,7 @@ export function CTASection() {
             </ul>
             <Button asChild size="lg" className="w-full sm:w-auto font-semibold">
               <Link to="/contact">
-                Request Care Assessment
+                Request A Care Service
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
