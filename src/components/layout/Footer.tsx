@@ -128,11 +128,11 @@ export function Footer() {
                 </div>
               ))}
               <a
-                href="mailto:info@focuscarelink.co.uk"
+                href="mailto:admin@focuscarelink.co.uk"
                 className="flex items-center gap-2 text-background/70 hover:text-background transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span>info@focuscarelink.co.uk</span>
+                <span>admin@focuscarelink.co.uk</span>
               </a>
             </div>
           </div>
