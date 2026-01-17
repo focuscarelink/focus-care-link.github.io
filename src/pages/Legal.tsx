@@ -1,7 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
-import { FileText, Download, Shield, Scale, Lock, Users, BookOpen, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { FileText, Download, Shield, Scale, Lock, Users, BookOpen, ExternalLink, Home, ChevronRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import focusCareLogo from "@/assets/focus-care-logo.png";
 
 const policies = [
   {
@@ -87,10 +89,29 @@ const groupedPolicies = policies.reduce((acc, policy) => {
 export default function Legal() {
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section with Breadcrumb */}
       <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
+            {/* Breadcrumb */}
+            <nav className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6">
+              <Link to="/" className="flex items-center gap-1 hover:text-primary transition-colors">
+                <Home className="w-4 h-4" />
+                <span>Home</span>
+              </Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-foreground font-medium">Legal & Policies</span>
+            </nav>
+            
+            {/* Logo */}
+            <div className="flex justify-center mb-6">
+              <img 
+                src={focusCareLogo} 
+                alt="Focus Care Link" 
+                className="h-16 w-auto"
+              />
+            </div>
+            
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Scale className="w-4 h-4" />
               Transparency & Compliance
@@ -270,7 +291,7 @@ export default function Legal() {
                     please don't hesitate to contact us.
                   </p>
                   <div className="space-y-2">
-                    <p className="font-semibold">Email: info@focuscarelink.co.uk</p>
+                    <p className="font-semibold">Email: admin@focuscarelink.co.uk</p>
                     <p className="font-semibold">Phone: 020 7419 7419</p>
                   </div>
                 </CardContent>
