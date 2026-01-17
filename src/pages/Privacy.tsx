@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Shield, ArrowRight, Lock } from "lucide-react";
 
 const Privacy = () => {
@@ -10,6 +11,7 @@ const Privacy = () => {
       <section className="py-16 hero-gradient">
         <div className="container">
           <div className="max-w-3xl">
+            <Breadcrumb currentPage="Privacy Notice" />
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-background/10 flex items-center justify-center">
                 <Lock className="w-6 h-6 text-background" />
