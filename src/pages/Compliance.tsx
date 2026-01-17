@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { 
   Shield, 
   FileText, 
@@ -129,6 +130,7 @@ const Compliance = () => {
       <section className="py-20 hero-gradient">
         <div className="container">
           <div className="max-w-3xl">
+            <Breadcrumb currentPage="Quality & Compliance" />
             <span className="inline-block px-4 py-2 bg-background/10 backdrop-blur-sm rounded-full text-background text-sm font-medium mb-6">
               Quality & Compliance
             </span>

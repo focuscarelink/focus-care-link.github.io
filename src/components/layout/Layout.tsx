@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { StickyContactBar } from "@/components/StickyContactBar";
+import { CookieConsent } from "@/components/CookieConsent";
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ export function Layout({ children }: LayoutProps) {
       <main className="flex-1">{children}</main>
       <Footer />
       <StickyContactBar />
+      <CookieConsent />
     </div>
   );
 }

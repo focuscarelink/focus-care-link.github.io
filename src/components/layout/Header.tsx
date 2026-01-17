@@ -11,6 +11,7 @@ const navigation = [
   { name: "About Us", href: "/about" },
   { name: "Careers", href: "/careers" },
   { name: "Quality & Compliance", href: "/compliance" },
+  { name: "Legal & Policies", href: "/legal" },
   { name: "Contact", href: "/contact" },
 ];
 
