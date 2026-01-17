@@ -109,7 +109,7 @@ const Privacy = () => {
 
             <h2 className="font-display text-2xl text-foreground mb-4 mt-10">Contact & Complaints</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              If you have questions about this notice or wish to exercise your rights, please contact us at 020 7419 7419 or info@focuscarelink.co.uk. You also have the right to lodge a complaint with the Information Commissioner's Office (ICO) at ico.org.uk.
+              If you have questions about this notice or wish to exercise your rights, please contact us at 020 7419 7419 or admin@focuscarelink.co.uk. You also have the right to lodge a complaint with the Information Commissioner's Office (ICO) at ico.org.uk.
             </p>
           </div>
 
