@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { ExternalLink, FileText, Shield } from "lucide-react";
-import cqcBadge from "@/assets/cqc-good-rating.jpg";
+import { ExternalLink, FileText } from "lucide-react";
 import hcaLogo from "@/assets/hca-logo.png";
-import isoLogo from "@/assets/iso-9001-badge.jpg";
+import isoLogo from "@/assets/iso-9001-camden.png";
 
 export function CQCBadge() {
   return (
@@ -12,18 +11,11 @@ export function CQCBadge() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Left: CQC Info */}
             <div>
-              <div className="flex items-center gap-4 mb-6">
-                <img 
-                  src={cqcBadge} 
-                  alt="CQC Good Rating" 
-                  className="h-24 w-auto rounded-lg"
-                />
-                <div>
-                  <h3 className="font-display text-xl font-semibold text-foreground">
-                    Care Quality Commission
-                  </h3>
-                  <p className="text-sm text-muted-foreground">Registered Provider - Good Rating</p>
-                </div>
+              <div className="mb-6">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                  Care Quality Commission
+                </h3>
+                <p className="text-sm text-muted-foreground">CQC Registered Provider</p>
               </div>
 
               <p className="text-muted-foreground mb-6 text-body-lg leading-relaxed">
@@ -35,17 +27,17 @@ export function CQCBadge() {
               {/* Accreditation logos */}
               <div className="flex items-center gap-4 mb-6">
                 <img src={hcaLogo} alt="Homecare Association Member" className="h-16 w-auto" />
-                <img src={isoLogo} alt="ISO 9001 Quality Management" className="h-16 w-auto" />
+                <img src={isoLogo} alt="ISO 9001 Quality Management - Camden Branch" className="h-16 w-auto" />
               </div>
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://www.cqc.org.uk/"
+                  href="https://www.cqc.org.uk/location/1-118941704"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
                 >
-                  View on CQC website
+                  View our CQC profile
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>

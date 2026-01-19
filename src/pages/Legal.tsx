@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FileText, Download, Shield, Scale, Lock, Users, BookOpen, ExternalLink, Home, ChevronRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import focusCareLogo from "@/assets/focus-care-logo.png";
 
 const policies = [
   {
@@ -102,15 +101,6 @@ export default function Legal() {
               <ChevronRight className="w-4 h-4" />
               <span className="text-foreground font-medium">Legal & Policies</span>
             </nav>
-            
-            {/* Logo */}
-            <div className="flex justify-center mb-6">
-              <img 
-                src={focusCareLogo} 
-                alt="Focus Care Link" 
-                className="h-16 w-auto"
-              />
-            </div>
             
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Scale className="w-4 h-4" />

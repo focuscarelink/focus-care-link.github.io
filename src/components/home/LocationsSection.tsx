@@ -1,6 +1,7 @@
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import isoLogoCamden from "@/assets/iso-9001-camden.png";
 
 const locations = [
   {
@@ -10,6 +11,7 @@ const locations = [
     phone: "020 7419 7419",
     hours: "Mon-Fri: 9am-5pm",
     description: "Our main office serving Camden, Islington, and surrounding North London boroughs.",
+    showIso: true,
   },
   {
     name: "East London Branch",
@@ -18,6 +20,7 @@ const locations = [
     phone: "0208 189 5988",
     hours: "Mon-Fri: 9am-5pm",
     description: "We mainly provide care for Barking and Dagenham, Haringey, and Hackney. We can also provide care in Waltham Forest, Tower Hamlets and surrounding areas of East London.",
+    showIso: false,
   },
 ];
 
@@ -73,6 +76,17 @@ export function LocationsSection() {
                   <span>{location.hours}</span>
                 </div>
               </div>
+
+              {/* ISO 9001 badge for Camden only */}
+              {location.showIso && (
+                <div className="mb-6">
+                  <img 
+                    src={isoLogoCamden} 
+                    alt="ISO 9001 Quality Management Certified" 
+                    className="h-16 w-auto"
+                  />
+                </div>
+              )}
 
               <Button asChild variant="outline" className="w-full">
                 <Link to="/contact">Get Directions</Link>
