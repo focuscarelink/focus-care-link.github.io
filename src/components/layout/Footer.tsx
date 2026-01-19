@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import focusCareLogo from "@/assets/focus-care-logo.png";
 import hcaLogo from "@/assets/hca-logo.png";
-import isoLogo from "@/assets/iso-9001-badge.jpg";
 
 const complianceLinks = [
   { name: "CQC Registration", href: "/compliance" },
@@ -57,7 +56,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-4 mb-4">
               <a
-                href="https://www.cqc.org.uk/"
+                href="https://www.cqc.org.uk/location/1-118941704"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-background/10 rounded-lg hover:bg-background/20 transition-colors"
@@ -69,7 +68,6 @@ export function Footer() {
             {/* Accreditation logos */}
             <div className="flex items-center gap-3 mt-4">
               <img src={hcaLogo} alt="Homecare Association Member" className="h-12 w-auto bg-white rounded p-1" />
-              <img src={isoLogo} alt="ISO 9001 Certified" className="h-12 w-auto rounded" />
             </div>
           </div>
 
