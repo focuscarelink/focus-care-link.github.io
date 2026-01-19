@@ -11,7 +11,7 @@ import {
   Quote
 } from "lucide-react";
 import hcaLogo from "@/assets/hca-logo.png";
-import isoLogo from "@/assets/iso-9001-badge.jpg";
+import isoLogo from "@/assets/iso-9001-badge.png";
 import diversityBadge from "@/assets/diversity-badge.jpg";
 
 const values = [
