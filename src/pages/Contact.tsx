@@ -15,6 +15,8 @@ import {
   Heart,
   Briefcase
 } from "lucide-react";
+import contactHeroImage from "@/assets/contact-hero.jpg";
+import contactOfficeImage from "@/assets/contact-office.jpg";
 
 const locations = [
   {
@@ -68,9 +70,17 @@ const Contact = () => {
 
   return (
     <Layout>
-      {/* Hero section */}
-      <section className="py-20 hero-gradient">
-        <div className="container">
+      {/* Hero section with image */}
+      <section className="relative py-20 hero-gradient overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={contactHeroImage}
+            alt="Get in touch"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-3xl">
             <Breadcrumb currentPage="Contact Us" />
             <span className="inline-block px-4 py-2 bg-background/10 backdrop-blur-sm rounded-full text-background text-sm font-medium mb-6">
@@ -215,6 +225,11 @@ const Contact = () => {
 
             {/* Contact details */}
             <div className="space-y-8">
+              {/* Office image */}
+              <div className="rounded-2xl overflow-hidden shadow-elevated">
+                <img src={contactOfficeImage} alt="Our friendly team at the office" className="w-full h-48 object-cover" />
+              </div>
+              
               <div>
                 <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
                   Our Locations

@@ -17,12 +17,23 @@ import {
   MessageCircle
 } from "lucide-react";
 
+// Import service images
+import servicesHeroImage from "@/assets/services-hero.jpg";
+import serviceDementiaImage from "@/assets/service-dementia-detail.jpg";
+import serviceLearningImage from "@/assets/service-learning-detail.jpg";
+import serviceMentalHealthImage from "@/assets/service-mental-health.jpg";
+import serviceLiveInImage from "@/assets/service-live-in.jpg";
+import serviceRespiteImage from "@/assets/service-respite.jpg";
+import serviceMedicationImage from "@/assets/service-medication.jpg";
+import serviceCompanionshipImage from "@/assets/service-companionship.jpg";
+import personalCareImage from "@/assets/services-personal-care.jpg";
 const services = [
   {
     id: "personal-care",
     icon: Heart,
     title: "Personal Care",
     description: "Dignified support with daily living activities, maintaining independence and comfort in the familiar surroundings of home.",
+    image: personalCareImage,
     features: [
       "Bathing and personal hygiene assistance",
       "Dressing and grooming support",
@@ -37,6 +48,7 @@ const services = [
     icon: Brain,
     title: "Dementia Care",
     description: "Specialized, person-centred care for those living with dementia, delivered with patience, understanding, and compassion.",
+    image: serviceDementiaImage,
     features: [
       "Memory-stimulating activities",
       "Safe environment management",
@@ -51,6 +63,7 @@ const services = [
     icon: Users,
     title: "Learning Disabilities",
     description: "Tailored support programmes for individuals with moderate to profound learning disabilities, promoting independence and inclusion.",
+    image: serviceLearningImage,
     features: [
       "Person-centred planning",
       "Skills development activities",
@@ -65,6 +78,7 @@ const services = [
     icon: Sparkles,
     title: "Mental Health Support",
     description: "Compassionate support for those experiencing mild to moderate mental health conditions, supporting recovery and wellbeing.",
+    image: serviceMentalHealthImage,
     features: [
       "Emotional support and companionship",
       "Routine establishment",
@@ -79,6 +93,7 @@ const services = [
     icon: Home,
     title: "Live-in Care",
     description: "24/7 around-the-clock support enabling you to remain in the comfort and familiarity of your own home.",
+    image: serviceLiveInImage,
     features: [
       "Continuous companionship",
       "Night-time support",
@@ -93,6 +108,7 @@ const services = [
     icon: Clock,
     title: "Respite Care",
     description: "Flexible short-term care providing essential breaks for family caregivers while ensuring continuity of care.",
+    image: serviceRespiteImage,
     features: [
       "Planned breaks for carers",
       "Emergency cover",
@@ -114,9 +130,17 @@ const additionalServices = [
 const Services = () => {
   return (
     <Layout>
-      {/* Hero section */}
-      <section className="py-20 hero-gradient">
-        <div className="container">
+      {/* Hero section with image */}
+      <section className="relative py-20 hero-gradient overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={servicesHeroImage}
+            alt="Professional care support"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-3xl">
             <Breadcrumb currentPage="Our Services" />
             <span className="inline-block px-4 py-2 bg-background/10 backdrop-blur-sm rounded-full text-background text-sm font-medium mb-6">
@@ -143,6 +167,15 @@ const Services = () => {
                 id={service.id}
                 className="scroll-mt-32"
               >
+                {/* Service image */}
+                <div className="rounded-2xl overflow-hidden shadow-elevated mb-10">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-64 md:h-80 object-cover"
+                  />
+                </div>
+                
                 <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                   {/* Content */}
                   <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
@@ -186,7 +219,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Additional services */}
+      {/* Additional services with images */}
       <section className="py-16 section-warm">
         <div className="container">
           <div className="text-center mb-12">
@@ -197,6 +230,31 @@ const Services = () => {
               Complementary services that enhance your care package
             </p>
           </div>
+          
+          {/* Image grid for additional services */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="rounded-2xl overflow-hidden shadow-elevated">
+              <img src={serviceMedicationImage} alt="Medication management" className="w-full h-48 object-cover" />
+              <div className="p-6 bg-card">
+                <div className="flex items-center gap-3 mb-2">
+                  <Pill className="w-5 h-5 text-primary" />
+                  <h3 className="font-semibold text-foreground">Medication Management</h3>
+                </div>
+                <p className="text-muted-foreground text-sm">Safe, accurate medication support and prompting</p>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-elevated">
+              <img src={serviceCompanionshipImage} alt="Companionship and escort services" className="w-full h-48 object-cover" />
+              <div className="p-6 bg-card">
+                <div className="flex items-center gap-3 mb-2">
+                  <MessageCircle className="w-5 h-5 text-primary" />
+                  <h3 className="font-semibold text-foreground">Companionship & Escort</h3>
+                </div>
+                <p className="text-muted-foreground text-sm">Social support and accompaniment to appointments</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
             {additionalServices.map((service) => (
               <div key={service.name} className="trust-card text-center">

@@ -14,6 +14,9 @@ import {
   Star
 } from "lucide-react";
 import diversityBadge from "@/assets/diversity-badge.jpg";
+import careersHeroImage from "@/assets/careers-hero.jpg";
+import careersTrainingImage from "@/assets/careers-training.jpg";
+import careersTeamImage from "@/assets/careers-team.jpg";
 
 const benefits = [
   {
@@ -77,9 +80,17 @@ const vacancies = [
 const Careers = () => {
   return (
     <Layout>
-      {/* Hero section */}
-      <section className="py-20 hero-gradient">
-        <div className="container">
+      {/* Hero section with image */}
+      <section className="relative py-20 hero-gradient overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={careersHeroImage}
+            alt="Join our caring team"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-3xl">
             <Breadcrumb currentPage="Careers" />
             <span className="inline-block px-4 py-2 bg-background/10 backdrop-blur-sm rounded-full text-background text-sm font-medium mb-6">
@@ -102,19 +113,24 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Benefits with image */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
-              Why Work With Us
-            </span>
-            <h2 className="font-display text-display-md text-foreground mb-6">
-              A Career That Matters
-            </h2>
-            <p className="text-body-lg text-muted-foreground">
-              We invest in our people because they are the heart of everything we do.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
+                Why Work With Us
+              </span>
+              <h2 className="font-display text-display-md text-foreground mb-6">
+                A Career That Matters
+              </h2>
+              <p className="text-body-lg text-muted-foreground">
+                We invest in our people because they are the heart of everything we do.
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-elevated">
+              <img src={careersTrainingImage} alt="Training and development" className="w-full h-auto object-cover" />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -135,10 +151,13 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* What we look for */}
+      {/* What we look for with team image */}
       <section className="py-20 section-warm">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-elevated">
+              <img src={careersTeamImage} alt="Our friendly team" className="w-full h-auto object-cover" />
+            </div>
             <div>
               <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
                 Who We're Looking For
@@ -157,18 +176,6 @@ const Careers = () => {
                 alt="Diverse, Inclusive, Together - We welcome people of all backgrounds" 
                 className="w-48 h-auto"
               />
-            </div>
-
-            <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h3 className="font-semibold text-foreground mb-6">Key qualities we value:</h3>
-              <ul className="space-y-4">
-                {qualities.map((quality) => (
-                  <li key={quality} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-foreground">{quality}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>

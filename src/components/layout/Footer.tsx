@@ -142,7 +142,10 @@ export function Footer() {
         <div className="container py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-background/60">
             <p>© {currentYear} Focus Care Link. All rights reserved.</p>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+              <Link to="/sitemap" className="hover:text-background transition-colors">
+                Sitemap
+              </Link>
               <Link to="/legal" className="hover:text-background transition-colors font-medium">
                 Legal & Policies
               </Link>

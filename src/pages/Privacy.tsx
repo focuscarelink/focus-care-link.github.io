@@ -3,13 +3,22 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Shield, ArrowRight, Lock } from "lucide-react";
+import privacyHeroImage from "@/assets/privacy-hero.jpg";
 
 const Privacy = () => {
   return (
     <Layout>
-      {/* Hero section */}
-      <section className="py-16 hero-gradient">
-        <div className="container">
+      {/* Hero section with image */}
+      <section className="relative py-16 hero-gradient overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={privacyHeroImage}
+            alt="Data protection and privacy"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-3xl">
             <Breadcrumb currentPage="Privacy Notice" />
             <div className="flex items-center gap-3 mb-6">
