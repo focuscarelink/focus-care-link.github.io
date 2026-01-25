@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   Eye
 } from "lucide-react";
+import complianceHeroImage from "@/assets/compliance-hero.jpg";
 
 const sections = [
   {
@@ -126,9 +127,17 @@ We regularly review and improve our accessibility practices.`,
 const Compliance = () => {
   return (
     <Layout>
-      {/* Hero section */}
-      <section className="py-20 hero-gradient">
-        <div className="container">
+      {/* Hero section with image */}
+      <section className="relative py-20 hero-gradient overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={complianceHeroImage}
+            alt="Quality and compliance"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-3xl">
             <Breadcrumb currentPage="Quality & Compliance" />
             <span className="inline-block px-4 py-2 bg-background/10 backdrop-blur-sm rounded-full text-background text-sm font-medium mb-6">

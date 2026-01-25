@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FileText, Download, Shield, Scale, Lock, Users, BookOpen, ExternalLink, Home, ChevronRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import legalHeroImage from "@/assets/legal-hero.jpg";
 
 const policies = [
   {
@@ -88,9 +89,17 @@ const groupedPolicies = policies.reduce((acc, policy) => {
 export default function Legal() {
   return (
     <Layout>
-      {/* Hero Section with Breadcrumb */}
-      <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20">
-        <div className="container">
+      {/* Hero Section with Image */}
+      <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={legalHeroImage}
+            alt="Legal and policies"
+            className="w-full h-full object-cover opacity-10"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/90 to-accent/10" />
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             {/* Breadcrumb */}
             <nav className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6">
