@@ -1,51 +1,28 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { 
-  Heart, 
-  Brain, 
-  Users, 
-  Home, 
-  Clock, 
-  Sparkles,
-  ArrowRight 
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import personalCareImg from "@/assets/services-personal-care.jpg";
+import dementiaCareImg from "@/assets/services-dementia-care.jpg";
+import learningDisabilityImg from "@/assets/services-learning-disability.jpg";
 
 const services = [
   {
-    icon: Heart,
+    image: personalCareImg,
     title: "Personal Care",
     description: "Dignified support with daily living activities including bathing, dressing, and medication management.",
     href: "/services#personal-care",
   },
   {
-    icon: Brain,
+    image: dementiaCareImg,
     title: "Dementia Care",
     description: "Specialized support for those living with dementia, delivered with patience and understanding.",
     href: "/services#dementia",
   },
   {
-    icon: Users,
+    image: learningDisabilityImg,
     title: "Learning Disabilities",
     description: "Tailored care programmes for individuals with moderate to profound learning disabilities.",
     href: "/services#learning-disabilities",
-  },
-  {
-    icon: Sparkles,
-    title: "Mental Health Support",
-    description: "Compassionate support for mild to moderate mental health conditions and recovery journeys.",
-    href: "/services#mental-health",
-  },
-  {
-    icon: Home,
-    title: "Live-in Care",
-    description: "24/7 around-the-clock support enabling you to remain in the comfort of your own home.",
-    href: "/services#live-in",
-  },
-  {
-    icon: Clock,
-    title: "Respite Care",
-    description: "Flexible short-term care providing essential breaks for family caregivers.",
-    href: "/services#respite",
   },
 ];
 
@@ -67,28 +44,34 @@ export function ServicesOverview() {
           </p>
         </div>
 
-        {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* Services grid with images */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
             <Link
               key={service.title}
               to={service.href}
-              className="trust-card group"
+              className="group overflow-hidden rounded-2xl bg-card shadow-card hover:shadow-elevated transition-all duration-300"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-7 h-7 text-primary" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                {service.description}
-              </p>
-              <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                Learn more
-                <ArrowRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </span>
+              <div className="p-6">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {service.description}
+                </p>
+                <span className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+                  Learn more
+                  <ArrowRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </span>
+              </div>
             </Link>
           ))}
         </div>

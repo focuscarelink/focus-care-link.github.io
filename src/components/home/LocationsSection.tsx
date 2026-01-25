@@ -2,6 +2,7 @@ import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import isoLogoCamden from "@/assets/iso-9001-camden.png";
+import londonCommunityImg from "@/assets/london-community.jpg";
 
 const locations = [
   {
@@ -28,6 +29,15 @@ export function LocationsSection() {
   return (
     <section className="py-20 bg-background">
       <div className="container">
+        {/* Hero image for locations */}
+        <div className="rounded-2xl overflow-hidden mb-16 shadow-elevated">
+          <img 
+            src={londonCommunityImg} 
+            alt="London community homes" 
+            className="w-full h-64 md:h-80 object-cover"
+          />
+        </div>
+
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
