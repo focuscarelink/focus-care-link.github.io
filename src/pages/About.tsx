@@ -12,7 +12,9 @@ import {
 } from "lucide-react";
 import hcaLogo from "@/assets/hca-logo.png";
 import isoLogo from "@/assets/iso-9001-badge.png";
-import diversityBadge from "@/assets/diversity-badge.jpg";
+import aboutHeroImage from "@/assets/about-hero.jpg";
+import teamValuesImage from "@/assets/team-values.jpg";
+import experienceCareImage from "@/assets/experience-care.jpg";
 
 const values = [
   {
@@ -38,29 +40,41 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2004", event: "Focus Care Link established in London" },
-  { year: "2010", event: "Expanded services to East London" },
+  { year: "2000", event: "Incorporated in 2000" },
+  { year: "2004", event: "Focus Care Link established in London (reincorporated)" },
+  { year: "2012", event: "Expanded services to East London" },
   { year: "2015", event: "Introduced specialist learning disability support" },
-  { year: "2020", event: "Adapted services during the pandemic" },
-  { year: "2024", event: "20 years of compassionate care" },
+  { year: "2020", event: "20 years of compassionate care" },
+  { year: "2026", event: "More than 25 years of dedicated service" },
 ];
 
 const About = () => {
   return (
     <Layout>
-      {/* Hero section */}
-      <section className="py-20 hero-gradient">
-        <div className="container">
+      {/* Hero section with image */}
+      <section className="relative py-20 hero-gradient overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={aboutHeroImage}
+            alt="Caring support at home"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+        </div>
+        <div className="container relative z-10">
           <div className="max-w-3xl">
             <Breadcrumb currentPage="About Us" />
             <span className="inline-block px-4 py-2 bg-background/10 backdrop-blur-sm rounded-full text-background text-sm font-medium mb-6">
               About Us
             </span>
-            <h1 className="font-display text-display-lg text-background mb-6">
-              People Over Profit, Always
+            <h1 className="font-display text-display-xl text-background mb-2">
+              Putting People First
             </h1>
+            <p className="text-body-xl text-background/80 mb-6">
+              People over profit, always.
+            </p>
             <p className="text-body-xl text-background/90 leading-relaxed">
-              Established in 2004, Focus Care Link was born from a desire to help 
+              Established in 2000, Focus Care Link was born from a desire to help 
               the vulnerable by providing care that treats every individual with 
               dignity and respect.
             </p>
@@ -87,22 +101,35 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values with team image */}
       <section className="py-20 section-warm">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
-              Our Values
-            </span>
-            <h2 className="font-display text-display-md text-foreground mb-6">
-              What We Stand For
-            </h2>
-            {/* Diversity badge */}
-            <div className="flex justify-center mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
+                Our Values
+              </span>
+              <h2 className="font-display text-display-md text-foreground mb-6">
+                What We Stand For
+              </h2>
+              
+              {/* Equality commitment text replacing the badge */}
+              <div className="bg-primary/10 rounded-xl p-6 mb-6">
+                <h3 className="font-display text-lg font-semibold text-primary mb-3">
+                  Diverse, Inclusive, Together
+                </h3>
+                <p className="text-foreground leading-relaxed">
+                  Focus Care Link is committed to <strong>Equality</strong> and to being <strong>Diverse, Inclusive, Together</strong>. 
+                  Our priority focus areas include Race, Colour, Sex, Gender Reassignment, Disability, Age, 
+                  Sexual Orientation, Religion or Belief, and Mental Health.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-elevated">
               <img 
-                src={diversityBadge} 
-                alt="Diverse, Inclusive, Together" 
-                className="w-40 h-auto"
+                src={teamValuesImage} 
+                alt="Our diverse and inclusive care team" 
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
@@ -125,16 +152,16 @@ const About = () => {
         </div>
       </section>
 
-      {/* Experience */}
+      {/* Experience with image */}
       <section className="py-20 bg-background">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="order-2 lg:order-1">
               <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
                 Our Experience
               </span>
               <h2 className="font-display text-display-md text-foreground mb-6">
-                Over 20 Years of Compassionate Care
+                Over 25 Years of Compassionate Care
               </h2>
               <p className="text-body-lg text-muted-foreground mb-6 leading-relaxed">
                 Focus Care Link is a leading specialist in Domiciliary Care in and around 
@@ -155,7 +182,7 @@ const About = () => {
 
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="font-display text-4xl font-bold text-primary mb-2">20+</div>
+                  <div className="font-display text-4xl font-bold text-primary mb-2">25+</div>
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
                 <div className="text-center">
@@ -169,23 +196,47 @@ const About = () => {
               </div>
             </div>
 
-            {/* Timeline */}
-            <div className="bg-secondary rounded-2xl p-8">
-              <h3 className="font-display text-xl font-semibold text-foreground mb-8">
-                Our Journey
-              </h3>
-              <div className="space-y-6">
+            {/* Experience image */}
+            <div className="order-1 lg:order-2 rounded-2xl overflow-hidden shadow-elevated">
+              <img 
+                src={experienceCareImage} 
+                alt="Compassionate care at home" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline / Our Journey */}
+      <section className="py-20 section-warm">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
+              Our Journey
+            </span>
+            <h2 className="font-display text-display-md text-foreground mb-6">
+              A Legacy of Care Since 2000
+            </h2>
+          </div>
+          
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20" />
+              
+              <div className="space-y-8">
                 {milestones.map((milestone, index) => (
-                  <div key={milestone.year} className="flex gap-4">
-                    <div className="relative">
-                      <div className="w-3 h-3 rounded-full bg-primary mt-2" />
-                      {index < milestones.length - 1 && (
-                        <div className="absolute top-5 left-1/2 -translate-x-1/2 w-0.5 h-full bg-border" />
-                      )}
+                  <div key={milestone.year} className="flex gap-6 relative">
+                    <div className="relative z-10 flex-shrink-0">
+                      <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                        <span className="text-primary-foreground font-bold text-sm">{milestone.year}</span>
+                      </div>
                     </div>
-                    <div className="pb-6">
-                      <div className="font-bold text-primary mb-1">{milestone.year}</div>
-                      <div className="text-foreground">{milestone.event}</div>
+                    <div className="pt-4 pb-8">
+                      <div className="bg-card rounded-xl p-6 shadow-card">
+                        <p className="text-foreground font-medium text-lg">{milestone.event}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -198,9 +249,12 @@ const About = () => {
       {/* CTA */}
       <section className="py-20 hero-gradient">
         <div className="container text-center">
-          <h2 className="font-display text-display-md text-background mb-6">
+          <h2 className="font-display text-display-md text-background mb-2">
             Join Our Story
           </h2>
+          <p className="text-body-lg text-background/70 mb-4">
+            Putting People First
+          </p>
           <p className="text-body-xl text-background/80 mb-8 max-w-2xl mx-auto">
             Whether you need care support or want to join our team, we'd love to hear from you.
           </p>

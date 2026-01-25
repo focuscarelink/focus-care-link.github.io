@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Heart, Users } from "lucide-react";
-import heroImage from "@/assets/hero-care.jpg";
+import heroImage from "@/assets/hero-new.jpg";
 
 const trustBadges = [
   { icon: Shield, label: "CQC Registered" },
-  { icon: Heart, label: "Since 2004" },
+  { icon: Heart, label: "Since 2000" },
   { icon: Users, label: "London-Wide Care" },
 ];
 
@@ -39,11 +39,13 @@ export function HeroSection() {
             ))}
           </div>
 
-          {/* Headline */}
-          <h1 className="font-display text-display-xl text-background mb-6 animate-fade-up delay-100 hero-text-shadow">
-            Compassionate Care,{" "}
-            <span className="text-primary-foreground/90">Right at Home</span>
+          {/* Headline - Updated tagline */}
+          <h1 className="font-display text-display-xl text-background mb-2 animate-fade-up delay-100 hero-text-shadow">
+            Putting People First
           </h1>
+          <p className="text-body-xl text-background/80 mb-6 animate-fade-up delay-100">
+            People over profit, always.
+          </p>
 
           {/* Subheadline */}
           <p className="text-body-xl text-background/90 mb-8 animate-fade-up delay-200 leading-relaxed">

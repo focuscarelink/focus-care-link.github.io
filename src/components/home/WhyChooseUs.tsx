@@ -42,9 +42,12 @@ export function WhyChooseUs() {
           <span className="text-primary font-semibold text-sm uppercase tracking-wide mb-4 block">
             Why Choose Us
           </span>
-          <h2 className="font-display text-display-md text-foreground mb-6">
-            People Over Profit, Always
+          <h2 className="font-display text-display-lg text-foreground mb-2">
+            Putting People First
           </h2>
+          <p className="text-body-lg text-muted-foreground mb-6">
+            People over profit, always.
+          </p>
           <p className="text-body-lg text-muted-foreground">
             Focus Care Link was born from a desire to help the vulnerable by providing 
             care that treats every individual with dignity and respect.
