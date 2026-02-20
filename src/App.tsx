@@ -12,6 +12,11 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Legal from "./pages/Legal";
 import Sitemap from "./pages/Sitemap";
+import SpecialistCareIndex from "./pages/SpecialistCareIndex";
+import SpecialistCare from "./pages/SpecialistCare";
+import CaseStudies from "./pages/CaseStudies";
+import PriceGuide from "./pages/PriceGuide";
+import Feedback from "./pages/Feedback";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +37,11 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/sitemap" element={<Sitemap />} />
+          <Route path="/specialist-care" element={<SpecialistCareIndex />} />
+          <Route path="/specialist-care/:condition" element={<SpecialistCare />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/price-guide" element={<PriceGuide />} />
+          <Route path="/feedback" element={<Feedback />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
