@@ -15,7 +15,7 @@ const services = [
   {
     image: dementiaCareImg,
     title: "Dementia Care",
-    description: "Specialized support for those living with dementia, delivered with patience and understanding.",
+    description: "Specialised support for those living with dementia, delivered with patience and understanding.",
     href: "/services#dementia",
   },
   {
@@ -39,8 +39,8 @@ export function ServicesOverview() {
             Tailored Care for Every Need
           </h2>
           <p className="text-body-lg text-muted-foreground">
-            From a few hours a week to 24/7 support, we deliver personalized care 
-            packages designed around your unique requirements and preferences.
+            From a few hours a week to full-time 24/7 support, we deliver personalised care 
+            packages designed around your individual needs and preferences.
           </p>
         </div>
 

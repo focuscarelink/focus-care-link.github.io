@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import focusCareLogo from "@/assets/focus-care-logo.png";
 import hcaLogo from "@/assets/hca-logo.png";
+import isoLogo from "@/assets/iso-9001-camden.png";
 
 const complianceLinks = [
   { name: "CQC Registration", href: "/compliance" },
@@ -51,8 +52,8 @@ export function Footer() {
               />
             </Link>
             <p className="text-background/70 mb-6 text-body-lg leading-relaxed">
-              Providing compassionate domiciliary care across London since 2004. 
-              Guided by Ubuntu — "I am because we are."
+            Focus Care Link – Providing compassionate domiciliary care across London since 2004. 
+            Guided by Ubuntu – "I am because we are."
             </p>
             <div className="flex items-center gap-4 mb-4">
               <a
@@ -67,6 +68,7 @@ export function Footer() {
             </div>
             {/* Accreditation logos */}
             <div className="flex items-center gap-3 mt-4">
+              <img src={isoLogo} alt="ISO 9001 Quality Management System – Camden Branch" className="h-12 w-auto bg-white rounded p-1" />
               <img src={hcaLogo} alt="Homecare Association Member" className="h-12 w-auto bg-white rounded p-1" />
             </div>
           </div>
