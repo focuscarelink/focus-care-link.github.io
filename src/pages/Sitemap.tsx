@@ -14,7 +14,17 @@ import {
   Brain,
   Sparkles,
   Clock,
-  ExternalLink
+  ExternalLink,
+  BookOpen,
+  PoundSterling,
+  MessageSquare,
+  Activity,
+  Eye,
+  Ear,
+  Bone,
+  Wind,
+  Stethoscope,
+  Accessibility
 } from "lucide-react";
 
 const siteStructure = [
@@ -23,11 +33,15 @@ const siteStructure = [
     links: [
       { name: "Home", href: "/", icon: Home, description: "Welcome to Focus Care Link" },
       { name: "Our Services", href: "/services", icon: Heart, description: "Explore our care services" },
+      { name: "Specialist Care", href: "/specialist-care", icon: Sparkles, description: "Condition-led specialist care" },
       { name: "About Us", href: "/about", icon: Users, description: "Learn about our story and values" },
       { name: "Careers", href: "/careers", icon: Briefcase, description: "Join our caring team" },
       { name: "Quality & Compliance", href: "/compliance", icon: Shield, description: "Our commitment to quality" },
-      { name: "Legal & Policies", href: "/legal", icon: FileText, description: "Policies and legal information" },
+      { name: "Case Studies", href: "/case-studies", icon: BookOpen, description: "Real care stories" },
+      { name: "Price Guide", href: "/price-guide", icon: PoundSterling, description: "Transparent care pricing" },
+      { name: "Feedback", href: "/feedback", icon: MessageSquare, description: "Share your experience" },
       { name: "Contact Us", href: "/contact", icon: Phone, description: "Get in touch with us" },
+      { name: "Legal & Policies", href: "/legal", icon: FileText, description: "Policies and legal information" },
     ],
   },
   {
@@ -39,6 +53,36 @@ const siteStructure = [
       { name: "Mental Health Support", href: "/services#mental-health", icon: Sparkles, description: "Wellbeing and recovery" },
       { name: "Live-in Care", href: "/services#live-in", icon: Home, description: "24/7 home support" },
       { name: "Respite Care", href: "/services#respite", icon: Clock, description: "Short-term care breaks" },
+    ],
+  },
+  {
+    section: "Specialist Care Services",
+    links: [
+      { name: "Acquired Brain Injury", href: "/specialist-care/acquired-brain-injury", icon: Brain, description: "Brain injury recovery support" },
+      { name: "Multiple Sclerosis", href: "/specialist-care/multiple-sclerosis", icon: Activity, description: "MS care and support" },
+      { name: "Alzheimer's Disease", href: "/specialist-care/alzheimers-disease", icon: Brain, description: "Memory and cognitive care" },
+      { name: "Muscular Dystrophy", href: "/specialist-care/muscular-dystrophy", icon: Activity, description: "Muscle condition support" },
+      { name: "Bariatric Care", href: "/specialist-care/bariatric-care", icon: Heart, description: "Surgery support" },
+      { name: "Neurological Support", href: "/specialist-care/neurological-support", icon: Brain, description: "Neurological care" },
+      { name: "Cancer Care", href: "/specialist-care/cancer-care", icon: Heart, description: "Compassionate cancer support" },
+      { name: "Parkinson's Care", href: "/specialist-care/parkinsons-care", icon: Activity, description: "Movement disorder support" },
+      { name: "Cerebral Palsy", href: "/specialist-care/cerebral-palsy", icon: Accessibility, description: "Independence support" },
+      { name: "Spinal Cord Injury", href: "/specialist-care/spinal-cord-injury", icon: Bone, description: "Spinal injury care" },
+    ],
+  },
+  {
+    section: "More Specialist Services",
+    links: [
+      { name: "Down's Syndrome", href: "/specialist-care/downs-syndrome", icon: Heart, description: "Development support" },
+      { name: "Stroke Care", href: "/specialist-care/stroke-care", icon: Brain, description: "Stroke rehabilitation" },
+      { name: "Huntington's Disease", href: "/specialist-care/huntingtons-disease", icon: Activity, description: "Huntington's support" },
+      { name: "Support for the Blind", href: "/specialist-care/support-for-the-blind", icon: Eye, description: "Visual impairment care" },
+      { name: "Knee & Hip Replacement", href: "/specialist-care/knee-hip-replacement", icon: Bone, description: "Joint surgery aftercare" },
+      { name: "Support for the Deaf", href: "/specialist-care/support-for-the-deaf", icon: Ear, description: "Hearing support" },
+      { name: "Locked-in Syndrome", href: "/specialist-care/locked-in-syndrome", icon: Shield, description: "Innovative home support" },
+      { name: "Ventilator Care", href: "/specialist-care/ventilator-care", icon: Wind, description: "Respiratory home care" },
+      { name: "Clinical Support", href: "/specialist-care/clinical-support", icon: Stethoscope, description: "Clinical care" },
+      { name: "Clinical Case Management", href: "/specialist-care/clinical-case-management", icon: Users, description: "Care coordination" },
     ],
   },
   {
