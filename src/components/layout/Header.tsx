@@ -31,7 +31,7 @@ export function Header() {
             </a>
             <a href="tel:02081895988" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Heart className="w-4 h-4" />
-              <span>Work With Us: 0208 189 5988</span>
+              <span>Careers &amp; Recruitment: 0208 189 5988</span>
             </a>
           </div>
           <div className="flex items-center gap-2 mx-auto md:mx-0">

@@ -42,7 +42,7 @@ export function CTASection() {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Personalized care packages
+                  Personalised care packages
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />

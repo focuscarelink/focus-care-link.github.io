@@ -20,7 +20,7 @@ const locations = [
     postcode: "E10 7JQ",
     phone: "0208 189 5988",
     hours: "Mon-Fri: 9am-5pm",
-    description: "We mainly provide care for Barking and Dagenham, Haringey, and Hackney. We can also provide care in Waltham Forest, Tower Hamlets and surrounding areas of East London.",
+    description: "We primarily provide care services across Barking and Dagenham, Haringey, and Hackney. We can also provide care in Waltham Forest, Tower Hamlets and surrounding areas of East London.",
     showIso: false,
   },
 ];

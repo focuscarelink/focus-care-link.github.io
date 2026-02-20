@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-new.jpg";
 
 const trustBadges = [
   { icon: Shield, label: "CQC Registered" },
-  { icon: Heart, label: "Since 2000" },
+  { icon: Heart, label: "Since 2004" },
   { icon: Users, label: "London-Wide Care" },
 ];
 
@@ -49,9 +49,9 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-body-xl text-background/90 mb-8 animate-fade-up delay-200 leading-relaxed">
-            We provide quality domiciliary care support within service users' homes, 
-            appropriately tailored to enhance quality of life and enable participation 
-            in communities.
+            We provide high-quality domiciliary care within service users' homes, 
+            tailored to enhance quality of life and support active participation 
+            in their communities.
           </p>
 
           {/* CTAs */}
@@ -83,7 +83,7 @@ export function HeroSection() {
                 href="tel:02081895988"
                 className="text-background text-xl font-semibold hover:text-primary-foreground transition-colors"
               >
-                Careers: 0208 189 5988
+                Careers &amp; Recruitment: 0208 189 5988
               </a>
             </div>
           </div>
