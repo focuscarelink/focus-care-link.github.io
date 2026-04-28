@@ -1,14 +1,14 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { 
-  Home, 
-  Heart, 
-  Users, 
-  Briefcase, 
-  Shield, 
-  FileText, 
-  Phone, 
+import {
+  Home,
+  Heart,
+  Users,
+  Briefcase,
+  Shield,
+  FileText,
+  Phone,
   Lock,
   Map,
   Brain,
@@ -24,7 +24,7 @@ import {
   Bone,
   Wind,
   Stethoscope,
-  Accessibility
+  Accessibility,
 } from "lucide-react";
 
 const siteStructure = [
@@ -45,14 +45,14 @@ const siteStructure = [
     ],
   },
   {
-    section: "Our Services",
+    section: "Core Service Pages",
     links: [
-      { name: "Personal Care", href: "/services#personal-care", icon: Heart, description: "Daily living assistance" },
-      { name: "Dementia Care", href: "/services#dementia", icon: Brain, description: "Specialist dementia support" },
-      { name: "Learning Disabilities", href: "/services#learning-disabilities", icon: Users, description: "Tailored disability support" },
-      { name: "Mental Health Support", href: "/services#mental-health", icon: Sparkles, description: "Wellbeing and recovery" },
-      { name: "Live-in Care", href: "/services#live-in", icon: Home, description: "24/7 home support" },
-      { name: "Respite Care", href: "/services#respite", icon: Clock, description: "Short-term care breaks" },
+      { name: "Personal Care", href: "/services/personal-care", icon: Heart, description: "Daily living assistance" },
+      { name: "Dementia Care", href: "/services/dementia-care", icon: Brain, description: "Specialist dementia support" },
+      { name: "Learning Disabilities", href: "/services/learning-disabilities", icon: Users, description: "Tailored disability support" },
+      { name: "Mental Health Support", href: "/services/mental-health-support", icon: Sparkles, description: "Wellbeing and recovery" },
+      { name: "Live-in Care", href: "/services/live-in-care", icon: Home, description: "24/7 home support" },
+      { name: "Respite Care", href: "/services/respite-care", icon: Clock, description: "Short-term care breaks" },
     ],
   },
   {
@@ -118,43 +118,35 @@ const siteStructure = [
 const Sitemap = () => {
   return (
     <Layout>
-      {/* Hero section */}
-      <section className="py-16 hero-gradient">
+      <section className="hero-gradient py-16">
         <div className="container">
           <div className="max-w-3xl">
             <Breadcrumb currentPage="Sitemap" />
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-background/10 flex items-center justify-center">
-                <Map className="w-6 h-6 text-background" />
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-background/10">
+                <Map className="h-6 w-6 text-background" />
               </div>
-              <span className="text-background/80 font-medium">Navigation</span>
+              <span className="font-medium text-background/80">Navigation</span>
             </div>
-            <h1 className="font-display text-display-lg text-background mb-4">
-              Sitemap
-            </h1>
-            <p className="text-background/80 text-body-lg">
+            <h1 className="mb-4 font-display text-display-lg text-background">Sitemap</h1>
+            <p className="text-body-lg text-background/80">
               Complete navigation guide to all pages and resources on our website.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Sitemap content */}
-      <section className="py-16 bg-background">
+      <section className="bg-background py-16">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
             {siteStructure.map((category) => (
               <div key={category.section} className="space-y-4">
-                <h2 className="font-display text-xl font-semibold text-foreground border-b border-border pb-3">
+                <h2 className="border-b border-border pb-3 font-display text-xl font-semibold text-foreground">
                   {category.section}
                 </h2>
                 <ul className="space-y-3">
                   {category.links.map((link) => {
                     const Icon = link.icon;
-                    const LinkComponent = link.external ? 'a' : Link;
-                    const linkProps = link.external 
-                      ? { href: link.href, target: "_blank", rel: "noopener noreferrer" }
-                      : { to: link.href };
 
                     return (
                       <li key={link.name}>
@@ -163,29 +155,26 @@ const Sitemap = () => {
                             href={link.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-start gap-3 p-3 rounded-lg hover:bg-secondary transition-colors"
+                            className="group flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-secondary"
                           >
-                            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                              <Icon className="w-4 h-4 text-primary" />
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
+                              <Icon className="h-4 w-4 text-primary" />
                             </div>
                             <div>
-                              <span className="font-medium text-foreground group-hover:text-primary transition-colors flex items-center gap-1">
+                              <span className="flex items-center gap-1 font-medium text-foreground transition-colors group-hover:text-primary">
                                 {link.name}
-                                <ExternalLink className="w-3 h-3" />
+                                <ExternalLink className="h-3 w-3" />
                               </span>
                               <p className="text-sm text-muted-foreground">{link.description}</p>
                             </div>
                           </a>
                         ) : (
-                          <Link
-                            to={link.href}
-                            className="group flex items-start gap-3 p-3 rounded-lg hover:bg-secondary transition-colors"
-                          >
-                            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                              <Icon className="w-4 h-4 text-primary" />
+                          <Link to={link.href} className="group flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-secondary">
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
+                              <Icon className="h-4 w-4 text-primary" />
                             </div>
                             <div>
-                              <span className="font-medium text-foreground group-hover:text-primary transition-colors">
+                              <span className="font-medium text-foreground transition-colors group-hover:text-primary">
                                 {link.name}
                               </span>
                               <p className="text-sm text-muted-foreground">{link.description}</p>
@@ -202,17 +191,11 @@ const Sitemap = () => {
         </div>
       </section>
 
-      {/* Quick contact */}
-      <section className="py-12 section-warm">
+      <section className="section-warm py-12">
         <div className="container text-center">
-          <p className="text-muted-foreground mb-4">
-            Can't find what you're looking for?
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
-          >
-            <Phone className="w-5 h-5" />
+          <p className="mb-4 text-muted-foreground">Can’t find what you’re looking for?</p>
+          <Link to="/contact" className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">
+            <Phone className="h-5 w-5" />
             Contact us for assistance
           </Link>
         </div>
