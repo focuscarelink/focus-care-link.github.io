@@ -19,21 +19,25 @@
     --popover: 0 0% 100%;
     --popover-foreground: 140 25% 15%;
 
-    /* Primary - Fresh Green matching logo for trust & care */
-    --primary: 100 65% 45%;
+    /* Primary - Vibrant Fresh Green matching logo for trust & care */
+    --primary: 100 75% 42%;
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 95 80% 55%;
 
-    /* Secondary - Warm light green */
-    --secondary: 100 25% 94%;
-    --secondary-foreground: 140 25% 20%;
+    /* Secondary - Bright light green */
+    --secondary: 100 40% 92%;
+    --secondary-foreground: 140 35% 18%;
 
     /* Muted tones */
-    --muted: 100 15% 94%;
-    --muted-foreground: 140 15% 45%;
+    --muted: 100 20% 95%;
+    --muted-foreground: 140 15% 40%;
 
-    /* Accent - Red from logo heart for CTAs */
-    --accent: 0 75% 50%;
+    /* Accent - Vibrant coral for CTAs */
+    --accent: 8 90% 58%;
     --accent-foreground: 0 0% 100%;
+
+    /* Sunshine highlight */
+    --sunshine: 42 95% 58%;
 
     /* Destructive */
     --destructive: 0 84% 60%;
