@@ -42,7 +42,7 @@ const CaseStudies = () => {
       {/* Hero */}
       <section className="relative py-20 hero-gradient overflow-hidden">
         <div className="absolute inset-0">
-          <img src={caseStudiesHero} alt="Case Studies" className="w-full h-full object-cover opacity-20" />
+          <img src={caseStudiesHero} alt="Case Studies" className="w-full h-full object-cover opacity-60" />
         </div>
         <div className="container relative z-10">
           <div className="max-w-3xl">

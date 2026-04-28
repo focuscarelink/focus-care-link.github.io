@@ -57,9 +57,9 @@ const About = () => {
           <img
             src={aboutHeroImage}
             alt="Caring support at home"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-transparent" />
         </div>
         <div className="container relative z-10">
           <div className="max-w-3xl">

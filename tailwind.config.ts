@@ -69,6 +69,7 @@ export default {
           good: "hsl(var(--cqc-good))",
           improvement: "hsl(var(--cqc-requires-improvement))",
         },
+        sunshine: "hsl(var(--sunshine))",
       },
       borderRadius: {
         lg: "var(--radius)",
