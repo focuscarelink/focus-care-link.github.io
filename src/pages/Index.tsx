@@ -5,6 +5,8 @@ import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { CQCBadge } from "@/components/home/CQCBadge";
 import { LocationsSection } from "@/components/home/LocationsSection";
 import { CTASection } from "@/components/home/CTASection";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { FAQSection } from "@/components/home/FAQSection";
 
 const Index = () => {
   return (
@@ -12,8 +14,10 @@ const Index = () => {
       <HeroSection />
       <ServicesOverview />
       <WhyChooseUs />
+      <TestimonialsSection />
       <CQCBadge />
       <LocationsSection />
+      <FAQSection />
       <CTASection />
     </Layout>
   );

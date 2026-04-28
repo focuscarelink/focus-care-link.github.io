@@ -14,11 +14,11 @@ const complianceLinks = [
 ];
 
 const serviceLinks = [
-  { name: "Personal Care", href: "/services#personal-care" },
-  { name: "Dementia Care", href: "/services#dementia" },
-  { name: "Learning Disabilities", href: "/services#learning-disabilities" },
-  { name: "Mental Health Support", href: "/services#mental-health" },
-  { name: "Live-in Care", href: "/services#live-in" },
+  { name: "Personal Care", href: "/services/personal-care" },
+  { name: "Dementia Care", href: "/services/dementia-care" },
+  { name: "Learning Disabilities", href: "/services/learning-disabilities" },
+  { name: "Mental Health Support", href: "/services/mental-health-support" },
+  { name: "Live-in Care", href: "/services/live-in-care" },
 ];
 
 const locations = [
@@ -39,50 +39,38 @@ export function Footer() {
 
   return (
     <footer className="bg-foreground text-background">
-      {/* Main footer content */}
       <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand column */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <img 
-                src={focusCareLogo} 
-                alt="Focus Care Link" 
-                className="h-16 w-auto bg-white rounded-lg p-2"
-              />
+            <Link to="/" className="mb-6 flex items-center gap-3">
+              <img src={focusCareLogo} alt="Focus Care Link" className="h-16 w-auto rounded-lg bg-white p-2" />
             </Link>
-            <p className="text-background/70 mb-6 text-body-lg leading-relaxed">
-            Focus Care Link – Providing compassionate domiciliary care across London since 2004. 
-            Guided by Ubuntu – "I am because we are."
+            <p className="mb-6 text-body-lg leading-relaxed text-background/70">
+              Focus Care Link – providing compassionate domiciliary care across London since 2004. Guided by Ubuntu – “I am because we are.”
             </p>
-            <div className="flex items-center gap-4 mb-4">
+            <div className="mb-4 flex items-center gap-4">
               <a
                 href="https://www.cqc.org.uk/location/1-118941704"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-background/10 rounded-lg hover:bg-background/20 transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg bg-background/10 px-4 py-2 transition-colors hover:bg-background/20"
               >
                 <span className="font-semibold">CQC Registered</span>
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="h-4 w-4" />
               </a>
             </div>
-            {/* Accreditation logos */}
-            <div className="flex items-center gap-3 mt-4">
-              <img src={isoLogo} alt="ISO 9001 Quality Management System – Camden Branch" className="h-12 w-auto bg-white rounded p-1" />
-              <img src={hcaLogo} alt="Homecare Association Member" className="h-12 w-auto bg-white rounded p-1" />
+            <div className="mt-4 flex items-center gap-3">
+              <img src={isoLogo} alt="ISO 9001 Quality Management System – Camden Branch" className="h-12 w-auto rounded bg-white p-1" />
+              <img src={hcaLogo} alt="Homecare Association Member" className="h-12 w-auto rounded bg-white p-1" />
             </div>
           </div>
 
-          {/* Services column */}
           <div>
-            <h3 className="font-display text-lg font-semibold mb-4">Our Services</h3>
+            <h3 className="mb-4 font-display text-lg font-semibold">Our Services</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
+                  <Link to={link.href} className="text-background/70 transition-colors hover:text-background">
                     {link.name}
                   </Link>
                 </li>
@@ -90,16 +78,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Compliance column */}
           <div>
-            <h3 className="font-display text-lg font-semibold mb-4">Quality & Compliance</h3>
+            <h3 className="mb-4 font-display text-lg font-semibold">Quality & Compliance</h3>
             <ul className="space-y-3">
               {complianceLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
+                  <Link to={link.href} className="text-background/70 transition-colors hover:text-background">
                     {link.name}
                   </Link>
                 </li>
@@ -107,31 +91,27 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact column */}
           <div>
-            <h3 className="font-display text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="mb-4 font-display text-lg font-semibold">Contact Us</h3>
             <div className="space-y-6">
               {locations.map((location) => (
                 <div key={location.name} className="space-y-2">
                   <h4 className="font-semibold text-background">{location.name}</h4>
                   <div className="flex items-start gap-2 text-background/70">
-                    <MapPin className="w-4 h-4 mt-1 shrink-0" />
+                    <MapPin className="mt-1 h-4 w-4 shrink-0" />
                     <span>{location.address}</span>
                   </div>
                   <a
                     href={`tel:${location.phone.replace(/\s/g, "")}`}
-                    className="flex items-center gap-2 text-background/70 hover:text-background transition-colors"
+                    className="flex items-center gap-2 text-background/70 transition-colors hover:text-background"
                   >
-                    <Phone className="w-4 h-4" />
+                    <Phone className="h-4 w-4" />
                     <span>{location.phone}</span>
                   </a>
                 </div>
               ))}
-              <a
-                href="mailto:admin@focuscarelink.co.uk"
-                className="flex items-center gap-2 text-background/70 hover:text-background transition-colors"
-              >
-                <Mail className="w-4 h-4" />
+              <a href="mailto:admin@focuscarelink.co.uk" className="flex items-center gap-2 text-background/70 transition-colors hover:text-background">
+                <Mail className="h-4 w-4" />
                 <span>admin@focuscarelink.co.uk</span>
               </a>
             </div>
@@ -139,27 +119,16 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-background/10">
         <div className="container py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-background/60">
+          <div className="flex flex-col items-center justify-between gap-4 text-sm text-background/60 md:flex-row">
             <p>© {currentYear} Focus Care Link. All rights reserved.</p>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-              <Link to="/sitemap" className="hover:text-background transition-colors">
-                Sitemap
-              </Link>
-              <Link to="/legal" className="hover:text-background transition-colors font-medium">
-                Legal & Policies
-              </Link>
-              <Link to="/privacy" className="hover:text-background transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/compliance#cookies" className="hover:text-background transition-colors">
-                Cookie Policy
-              </Link>
-              <Link to="/compliance#accessibility" className="hover:text-background transition-colors">
-                Accessibility
-              </Link>
+              <Link to="/sitemap" className="transition-colors hover:text-background">Sitemap</Link>
+              <Link to="/legal" className="font-medium transition-colors hover:text-background">Legal & Policies</Link>
+              <Link to="/privacy" className="transition-colors hover:text-background">Privacy Policy</Link>
+              <Link to="/compliance#cookies" className="transition-colors hover:text-background">Cookie Policy</Link>
+              <Link to="/compliance#accessibility" className="transition-colors hover:text-background">Accessibility</Link>
             </div>
           </div>
         </div>
